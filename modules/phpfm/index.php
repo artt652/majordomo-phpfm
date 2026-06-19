@@ -2402,7 +2402,7 @@ function dir_list_form() {
         });
     }
     function dir_list_update_total_size_callback(dirname,id,dirsize){
-        for(var x=0;x<".(integer)count($entry_list).";x++){
+        for(var x=0;x<".(int)count($entry_list).";x++){
             if(entry_list['entry'+x].name == dirname){
                 entry_list['entry'+x].size = parseInt(dirsize);
                 break;
@@ -2529,7 +2529,7 @@ function dir_list_form() {
     function is_anything_selected(){
         var selected_dir_list = new Array();
         var selected_file_list = new Array();
-        for(var x=0;x<".(integer)count($entry_list).";x++){
+        for(var x=0;x<".(int)count($entry_list).";x++){
             if(entry_list['entry'+x].selected){
                 if(entry_list['entry'+x].type == 'dir') selected_dir_list.push(entry_list['entry'+x].name);
                 else selected_file_list.push(entry_list['entry'+x].name);
@@ -2557,7 +2557,7 @@ function dir_list_form() {
         total_size = 0;
         total_dirs = 0;
         total_files = 0;
-        for(var x=0;x<".(integer)count($entry_list).";x++){
+        for(var x=0;x<".(int)count($entry_list).";x++){
             if(entry_list['entry'+x].type == 'dir'){
                 total_dirs++;
             } else {
@@ -2587,7 +2587,7 @@ function dir_list_form() {
         total_size_selected = 0;
         total_dirs_selected = 0;
         total_files_selected = 0;
-        for(var x=0;x<".(integer)count($entry_list).";x++){
+        for(var x=0;x<".(int)count($entry_list).";x++){
             if(entry_list['entry'+x].selected){
                 if(entry_list['entry'+x].type == 'dir'){
                     total_dirs_selected++;
@@ -2620,7 +2620,7 @@ function dir_list_form() {
     // Select all/none/inverse
     function selectANI(Butt){
         cancel_copy_move();
-        for(var x=0;x<". (integer)count($entry_list).";x++){
+        for(var x=0;x<". (int)count($entry_list).";x++){
             var Row = document.getElementById('entry'+x);
             var newClassName = null;
             switch (Butt.value){
@@ -2818,7 +2818,7 @@ function dir_list_form() {
             var total_selected = 0;
             var entry_name = '';
             conf = '';
-            for(var x=0;x<".(integer)count($entry_list).";x++){
+            for(var x=0;x<".(int)count($entry_list).";x++){
                 if(entry_list['entry'+x].selected){
                     total_selected++;
                     if (entry_name == '') entry_name = entry_list['entry'+x].name;
